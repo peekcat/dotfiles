@@ -1,0 +1,51 @@
+export ZSH="/Users/scott/.oh-my-zsh"
+
+ZSH_THEME="agnoster"
+
+plugins=(
+	z
+	cp
+	git
+	sudo
+	web-search
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+)
+
+source $ZSH/oh-my-zsh.sh
+
+
+bindkey '^v' edit-command-line
+bindkey -v
+bindkey -M vicmd "k" vi-insert
+bindkey -M vicmd "K" vi-insert-bol
+bindkey -M vicmd "n" vi-backward-char
+bindkey -M vicmd "i" vi-forward-char
+bindkey -M vicmd "N" vi-beginning-of-line
+bindkey -M vicmd "I" vi-end-of-line
+bindkey -M vicmd "e" down-line-or-history
+bindkey -M vicmd "u" up-line-or-history
+bindkey -M vicmd "l" undo
+#bindkey -M vicmd "-" vi-rev-repeat-search
+bindkey -M vicmd "=" vi-repeat-search
+bindkey -M vicmd "h" vi-forward-word-end
+
+function zle-keymap-select {
+	if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
+		echo -ne '\e[1 q'
+	elif [[ ${KEYMAP} == main ]] || [[ ${KEYMAP} == viins ]] || [[ ${KEYMAP} = '' ]] || [[ $1 = 'beam' ]]; then
+		echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+
+alias sudo='sudo -E'
+alias vi='nvim'
+alias n='neofetch'
+alias ra='ranger'
+alias c='clear'
+alias r.='rm .DS_Store*'
+
+export PATH=${PATH}:/usr/local/opt/mysql@5.7/bin
+
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
