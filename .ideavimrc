@@ -32,10 +32,6 @@ nnoremap = n
 nnoremap - N
 noremap <LEADER><CR> :nohlsearch<CR>
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Cursor movement
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " new cursor movement (the default arrow keys are used for resizing windows)
 "noremap <silent> h h
 noremap <silent> n j
