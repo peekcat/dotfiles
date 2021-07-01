@@ -1,2 +1,2 @@
 # dotfiles
-Author: Scott
+Author: Connor
