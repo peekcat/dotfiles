@@ -1,5 +1,39 @@
+" Don't compatible vi
+set nocompatible
+
+" Show mode
+set showmode
+
+" Set Backspace mode
+set bs=eol,start,indent
+
+" row 5 content
+set scrolloff=5
+
+" Display relative line number
+set relativenumber
+
+" Copy in system
+set clipboard=unnamed
+
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases 
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch 
+
+" Key Mappings
 " set <LEADER> as <SPACE>
 let mapleader="\<Space>"
+
+" kk to exit insert mode
+inoremap kk <esc>
 
 " disable the default s key
 noremap s <nop>
@@ -32,7 +66,6 @@ nnoremap = n
 nnoremap - N
 noremap <LEADER><CR> :nohlsearch<CR>
 
-" new cursor movement (the default arrow keys are used for resizing windows)
 "noremap <silent> h h
 noremap <silent> n j
 noremap <silent> e k
