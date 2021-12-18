@@ -32,9 +32,6 @@ set incsearch
 " set <LEADER> as <SPACE>
 let mapleader="\<Space>"
 
-" kk to exit insert mode
-inoremap kk <esc>
-
 " disable the default s key
 noremap s <nop>
 
