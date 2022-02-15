@@ -1,2 +1,2 @@
 # dotfiles
-Author: Connor
+Author: ZeZhou Ding
