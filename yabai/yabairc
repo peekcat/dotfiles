@@ -13,10 +13,6 @@ gaps["left"]="5"
 gaps["right"]="5"
 gaps["inner"]="10"
 
-color["focused"]="0xff596aa8"
-color["normal"]="0xff6c5ce7"
-color["preselect"]="0xff6b81ce"
-
 # Uncomment to refresh ubersicht widget on workspace change
 # Make sure to replace WIDGET NAME for the name of the ubersicht widget
 #ubersicht_spaces_refresh_command="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"WIDGET NAME\"'"
@@ -46,9 +42,9 @@ yabai -m config window_shadow               float
 
 yabai -m config window_border               on
 yabai -m config window_border_width         3
-yabai -m config active_window_border_color  "${color["focused"]}"
-yabai -m config normal_window_border_color  "${color["normal"]}"
-yabai -m config insert_feedback_color       "${color["preselect"]}"
+yabai -m config active_window_border_color  "0xff6b81ce"
+yabai -m config normal_window_border_color  "0xff4b588a"
+yabai -m config insert_feedback_color       "0xff6c5ce7"
 
 yabai -m config active_window_opacity       1.0
 yabai -m config normal_window_opacity       0.90
