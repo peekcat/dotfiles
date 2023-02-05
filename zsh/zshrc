@@ -1,7 +1,6 @@
 export ZSH="/Users/scott/.oh-my-zsh"
 
-#ZSH_THEME="agnoster"
-ZSH_THEME="af-magic"
+#ZSH_THEME="robbyrussell"
 
 plugins=(
 	z
@@ -15,37 +14,10 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-
-bindkey '^v' edit-command-line
-bindkey -v
-bindkey -M vicmd "u" vi-insert
-bindkey -M vicmd "U" vi-insert-bol
-bindkey -M vicmd "h" vi-backward-char
-bindkey -M vicmd "i" vi-forward-char
-bindkey -M vicmd "H" vi-beginning-of-line
-bindkey -M vicmd "I" vi-end-of-line
-bindkey -M vicmd "n" down-line-or-history
-bindkey -M vicmd "e" up-line-or-history
-bindkey -M vicmd "l" undo
-#bindkey -M vicmd "-" vi-rev-repeat-search
-bindkey -M vicmd "=" vi-repeat-search
-bindkey -M vicmd "k" vi-forward-word-end
-
-function zle-keymap-select {
-	if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
-		echo -ne '\e[1 q'
-	elif [[ ${KEYMAP} == main ]] || [[ ${KEYMAP} == viins ]] || [[ ${KEYMAP} = '' ]] || [[ $1 = 'beam' ]]; then
-		echo -ne '\e[5 q'
-  fi
-}
-zle -N zle-keymap-select
-
 alias sudo='sudo -E'
 alias vi='nvim'
 alias n='neofetch'
-alias ra='ranger'
 alias c='clear'
-alias r.='rm .DS_Store*'
 
 # TMUX
 alias t='tmux'
@@ -56,5 +28,12 @@ alias ts='tmux switch -t'
 alias td='tmux detach'
 
 export PATH=${PATH}:/usr/local/opt/mysql@5.7/bin
+export PATH=${PATH}:/usr/local/anaconda3/bin
+export PATH=${PATH}:/usr/local/maven/apache-maven-3.6.3/bin
+export PATH="/usr/local/opt/node@12/bin:$PATH"
+export PATH="/usr/local/opt/redis@4.0/bin:$PATH"
 
-export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
+# VPN port
+export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890
+# ranger
+alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
