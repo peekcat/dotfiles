@@ -1,52 +1,41 @@
-" Don't compatible vi
-set nocompatible
-
-" Show mode
-set showmode
-
+" ===
+" === General
+" ===
 " Set Backspace mode
 set bs=eol,start,indent
 
 " row 5 content
 set scrolloff=5
 
-" Display relative line number
-set relativenumber
-
 " Copy in system
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
 set hlsearch
 
 " Makes search act like search in modern browsers
-set incsearch 
+set incsearch
 
-" Key Mappings
+" Don't search again when both ends of the file are searched
+set nowrapscan
+
+" ===
+" === Basic Mappings
+" ===
 " set <LEADER> as <SPACE>
 let mapleader="\<Space>"
 
 " disable the default s key
 noremap s <nop>
 
-" Save & quit
-noremap Q :q<CR>
-noremap <C-q> :qa<CR>
-noremap S :w<CR>
-
-
-" insert Key
-noremap u i
-noremap U I
-
-" Undo operations
-noremap l u
+" quick to exit insert mode
+imap jk <ESC>
 
 " make Y to copy till the end of the line
 nnoremap Y y$
@@ -58,30 +47,22 @@ vnoremap Y "+y
 nnoremap < <<
 nnoremap > >>
 
-" search
-nnoremap = n
-nnoremap - N
+" cancel search highlight
 noremap <LEADER><CR> :nohlsearch<CR>
 
-"noremap <silent> h h
-noremap <silent> n j
-noremap <silent> e k
-noremap <silent> i l
-noremap <silent> ge gk
-noremap <silent> gn gj
-
+" ===
+" === Cursor Movement
+" ===
 " E/N keys for 5 times e/n (faster navigation)
-noremap <silent> E 5k
-noremap <silent> N 5j
+noremap <silent> K 5k
+noremap <silent> J 5j
 
 " H key: go to the start of the line
 noremap <silent> H 0
 " I key: go to the end of the line
-noremap <silent> I $
+noremap <silent> L $
 
 " faster in-line navigation
 noremap W 5w
 noremap B 5b
-
-" set k (same as n, cursor left) to 'end of word'
-noremap k e
+noremap E 5e
