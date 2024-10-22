@@ -1,6 +1,6 @@
 export ZSH="/Users/scott/.oh-my-zsh"
 
-#ZSH_THEME="robbyrussell"
+ZSH_THEME="jaischeema"
 
 plugins=(
 	z
@@ -14,10 +14,19 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# alias
 alias sudo='sudo -E'
 alias vi='nvim'
 alias n='neofetch'
 alias c='clear'
+alias cn="kitty +kitten ssh"
+
+# GO
+GOROOT="/usr/local/go"
+export GOBIN=$GOROOT/bin
+export PATH=$PATH:$GOBIN
+export GOPATH=$HOME/Documents/go
+export GOPROXY=https://goproxy.cn
 
 # TMUX
 alias t='tmux'
@@ -27,13 +36,16 @@ alias tk='tmux kill-session -t'
 alias ts='tmux switch -t'
 alias td='tmux detach'
 
-export PATH=${PATH}:/usr/local/opt/mysql@5.7/bin
-export PATH=${PATH}:/usr/local/anaconda3/bin
-export PATH=${PATH}:/usr/local/maven/apache-maven-3.6.3/bin
-export PATH="/usr/local/opt/node@12/bin:$PATH"
-export PATH="/usr/local/opt/redis@4.0/bin:$PATH"
-
-# VPN port
-export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890
 # ranger
 alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+# proxy
+export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890
+
+# JDK
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# NVM
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
